@@ -1,4 +1,4 @@
-# Dispatcher configuration
+# AEM 6.5 Dispatcher configuration
 
 This module contains the basic dispatcher configurations. The configuration gets bundled in a ZIP file,
 and can be downloaded and unzipped to a local folder for development.
