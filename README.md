@@ -175,7 +175,7 @@ Run following commands to deploy the code into dispatcher server
 
     - * `./deploy-conf.sh qa all`
 
-##environment specific names like qa, dev, all should be name in shell script
+## Environment specific names like qa, dev, all should be name in shell script explanations
 
 * deploy-scripts deployment shell scripts (backup and deploy)
 
