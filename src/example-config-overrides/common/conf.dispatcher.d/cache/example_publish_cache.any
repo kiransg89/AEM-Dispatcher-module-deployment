@@ -1,0 +1,29 @@
+## Don't cache My Account components
+/0002 {
+    /selectors '(dashboard|medicalinfo|columndata)' /extension '(html|json)'
+    /type "deny"
+}
+## Don't cache My Account Pages
+/0003 {
+	/path "/content/example-web/en/my-account*"
+	/type "deny"
+}
+## Deny cache My Pharmacy Pages US23861
+/0004 {
+        /path "/content/example-web/en/pharmacy/services/my-pharmacy*"
+        /type "deny"
+}
+## Deny caching of sitemap & robots.txt
+/0005 {
+    /selectors '(sitemap)' /extension '(html|xml)'
+    /type "deny"
+}
+/0006 {
+    /selectors '(robots)' /extension '(html|txt)'
+    /type "deny"
+}
+## Deny cache for Vanity URL
+/0007 {
+    /path "/libs/granite/dispatcher/content/vanityUrls.html"
+    /type "deny"
+}

@@ -1,0 +1,38 @@
+# Always serve via https
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{REQUEST_URI} !^/dispatcher/invalidate.cache
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Rewrite aem-sitemap request
+RewriteCond     %{REQUEST_URI} /sitemap.xml$ [NC]
+RewriteRule     ^(.*)$ /content/example/en.sitemap.xml [PT,L]
+
+# Rewrite robots.txt request
+RewriteCond     %{REQUEST_URI} /robots.txt$ [NC]
+RewriteRule     ^(.*)$ /content/example/en.robots.txt [PT,L]
+
+# '/' request goes to home
+RewriteRule 	^/$ /content/example/en.html [PT,L]
+
+# Prepend the '/content/example/en' for image
+#RewriteCond     %{REQUEST_URI} /*.coreimg.*
+RewriteCond     %{REQUEST_URI} /image.coreimg.*
+RewriteRule     /(.*)$ /content/example/en/$1 [PT,L]
+
+# Prepend the '/content/example/en'
+RewriteCond     %{REQUEST_URI} !^/apps
+RewriteCond     %{REQUEST_URI} !^/bin
+RewriteCond     %{REQUEST_URI} !^/content
+RewriteCond     %{REQUEST_URI} !/image.coreimg.*
+RewriteCond     %{REQUEST_URI} !^/etc
+RewriteCond     %{REQUEST_URI} !^/e-modules
+RewriteCond     %{REQUEST_URI} !^/home
+RewriteCond     %{REQUEST_URI} !^/libs
+RewriteCond     %{REQUEST_URI} !^/saml_login
+RewriteCond     %{REQUEST_URI} !^/system
+RewriteCond     %{REQUEST_URI} !^/tmp
+RewriteCond     %{REQUEST_URI} !^/var
+RewriteCond     %{REQUEST_URI} .*$
+RewriteRule     /(.*)$ /content/example/en/$1.html [PT,L]
+
+  

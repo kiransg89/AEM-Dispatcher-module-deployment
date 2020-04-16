@@ -1,0 +1,18 @@
+## Collect any variables that are set in /etc/httpd/conf.d/variables/example.vars
+Include /etc/httpd/conf.d/variables/example.vars
+
+## Collect the dispatchers number
+PassEnv DISP_ID
+
+<VirtualHost *:80>
+       ServerName      ${DISPATCHER_NAME}
+       ServerAlias     ${DISPATCHER_IP}
+       DocumentRoot    ${DISPATCHER_FE_DOCROOT}
+       <Directory "${DISPATCHER_FE_DOCROOT}">
+           	Options Indexes FollowSymLinks
+       		AllowOverride None
+            Require all granted
+   		</Directory>
+</VirtualHost>
+
+## This file is deployed via a custom scripts

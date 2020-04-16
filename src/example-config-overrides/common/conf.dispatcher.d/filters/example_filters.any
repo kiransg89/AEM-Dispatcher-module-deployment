@@ -1,0 +1,7 @@
+##################
+# Rules should here start with 100
+##################
+
+## WARNING: As of now its loosely couple via [a-zA-Z\/.]* but before go-live it will/should be tightened
+##allow POSTs to update Right Rail related forms like Login, Signup
+/0100 { /type "allow" /method "*" /url "/content/example/[a-zA-Z/.]*.json" }
