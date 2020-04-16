@@ -96,7 +96,7 @@ and can be downloaded and unzipped to a local folder for development.
    conf.dispatcher.d/virtualhosts/default_virtualhosts.any
    ```
 
-## File EXAMPLE Project Structure
+## EXAMPLE Project Structure
 
 ```
 ./
