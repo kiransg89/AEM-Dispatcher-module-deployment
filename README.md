@@ -158,16 +158,24 @@ DEV and QA folder consists of environment specific vhost, variables
 ```
 
 ## Copy files Instruction
-* ./copy-to-target.sh username ipaddress
+- Execute following command on MAC or Linux machine to copy the files from local to server
+    - `* ./copy-to-target.sh username ipaddress`
 
 
 ## Deploy files Instruction
-* cd src/deploy-scripts/
-* ./deploy-conf.sh dev all
+Run following commands to deploy the code into dispatcher server
 
-* ./deploy-conf.sh qa all
+- Navigate to the path
+    - * `cd src/deploy-scripts/`
 
-environment specific names like qa, dev, all should be name in shell script
+- Execute the command
+    - * `./deploy-conf.sh dev all`
+    
+    - `OR`
+
+    - * `./deploy-conf.sh qa all`
+
+##environment specific names like qa, dev, all should be name in shell script
 
 * deploy-scripts deployment shell scripts (backup and deploy)
 
